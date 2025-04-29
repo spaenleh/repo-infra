@@ -16,5 +16,5 @@ jobs:
         run: echo ${{ inputs.config-path }}
         shell: bash
       - name: print secrets
-        run: echo ${{ secrets.TEST }}
+        run: echo ${{ secrets.TEST }} | wc -c
         shell: bash
