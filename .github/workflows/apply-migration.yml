@@ -1,0 +1,20 @@
+name: Apply Migration
+
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+
+jobs:
+  migration:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: print input
+        run: echo ${{ inputs.config-path }}
+        shell: bash
+      - name: print secrets
+        run: echo ${{ secrets.TEST }}
+        shell: bash
